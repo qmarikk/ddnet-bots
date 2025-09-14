@@ -1,0 +1,33 @@
+{
+	"name": "teeworlds",
+	"version": "2.5.7",
+	"description": "Library for (ingame) teeworlds bots.",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"clean": "rimraf dist",
+		"build": "npm run clean && tsc && node scripts/prepare-dist-pkg.js",
+		"prepare": "npm run build",
+		"pack:dist": "npm run build && npm pack ./dist"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+github.com/swarfeya/teeworlds-library-ts.git"
+	},
+	"keywords": [
+		"teeworlds",
+		"ddracenetwork",
+		"headless"
+	],
+	"devDependencies": {
+		"@types/node": "^22.13.5",
+		"rimraf": "^6.0.1",
+		"typescript": "^5.8.2"
+	}
+}
